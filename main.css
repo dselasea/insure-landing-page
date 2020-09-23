@@ -1,3 +1,12 @@
+:root {
+  --dark-violet: hsl(256, 26%, 20%);
+  --grayish-blue: hsl(216, 30%, 68%);
+
+  --very-dark-violet: hsl(270, 9%, 17%);
+  --dark-grayish-violet: hsl(273, 4%, 51%);
+  --very-light-gray: hsl(0, 0%, 98%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +15,17 @@
 body {
   font-size: 16px;
   font-family: "Karla", sans-serif;
+}
+
+h2 {
+  font-size: 2rem;
+  padding: 0.5rem 0;
+  color: var(--very-light-gray);
+}
+
+h2,
+h4 {
+  font-family: "DM Serif Display", serif;
 }
 
 /* Menu overlay */
@@ -22,6 +42,7 @@ body {
   position: absolute;
   background-color: rgba(43, 39, 47, 0);
   transition: all 0.3s ease;
+  z-index: 3;
 }
 
 .main-content.overlay::before {
@@ -30,7 +51,12 @@ body {
   width: 100%;
   height: 100%;
   position: absolute;
+  background-image: url(./images/bg-pattern-mobile-nav.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: 50% 26%;
   background-color: rgba(43, 39, 47, 1);
+  z-index: 3;
 }
 
 /* End of menu overlay */
@@ -68,7 +94,7 @@ a {
 .nav__navigation {
   transform: translateX(-200%);
   transition: all 0.3s ease;
-  z-index: 2;
+  z-index: 5;
 }
 
 .nav__navigation.open {
@@ -113,17 +139,91 @@ a {
   padding: 3rem;
   text-align: center;
   color: #fff;
+  position: relative;
 }
 
-.main__content h2 {
+.main__content::before {
+  content: "";
+  background-image: url(./images/bg-pattern-intro-left-mobile.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.main__content::after {
+  content: "";
+  background-image: url(./images/bg-pattern-intro-right-mobile.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 20%;
+  height: 42%;
+  bottom: 0;
+  right: 0;
+}
+
+/* .main__content h2 {
   font-family: "DM Serif Display", serif;
   font-size: 2rem;
-}
+} */
 
-.main__content a {
+.btn {
   color: #fff;
   display: inline-block;
   margin: 20px 0;
   border: 2px solid #fff;
   padding: 0.8rem 2rem;
+}
+
+/* .main__content a {
+  color: #fff;
+  display: inline-block;
+  margin: 20px 0;
+  border: 2px solid #fff;
+  padding: 0.8rem 2rem;
+} */
+
+/* Section Content */
+
+.content {
+  background-color: var(--very-light-gray);
+}
+.content__body {
+  text-align: center;
+  padding: 3rem 0;
+  display: flex;
+  flex-flow: column;
+}
+
+.content .content__heading h2 {
+  padding: 3rem 0;
+  color: var(--very-dark-violet);
+}
+
+.content img {
+  padding: 1rem 0;
+}
+
+.content h4 {
+  padding: 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.content p {
+  padding-bottom: 1rem;
+  color: var(--very-dark-violet);
+}
+
+.find {
+  background-color: var(--dark-violet);
+  background-image: url(./images/bg-pattern-how-we-work-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+.find__content {
+  text-align: center;
+  padding: 3rem 0;
 }
